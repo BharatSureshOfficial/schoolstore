@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+
+<style>
+    /* Custom CSS styles for the form */
+    .form-label,
+    .form-control {
+        color: white;
+        font-weight: bold;/* Set text color to white */
+    }
+
+    .btn-primary {
+        background-color: #0074D9; /* Change to your desired shade of blue */
+        color: white; /* Set text color to white */
+    }
+</style>
+
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="username" class="col-sm-2 col-form-label form-label">Username:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="first_name" class="col-sm-2 col-form-label form-label">First_Name:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="last_name" class="col-sm-2 col-form-label form-label">Last_Name:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label form-label">Email:</label>
+        <div class="col-sm-6">
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label form-label">Password:</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="password1" class="col-sm-2 col-form-label form-label">Confirm Password:</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

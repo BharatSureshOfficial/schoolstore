@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h4 style="color: white;">Hi {{user.username}} </h4>
+
+  <a href="{% url 'details' %}">
+    <button type="button">Go to Details Page</button>
+  </a>
+{% endblock %}
